@@ -1,0 +1,80 @@
+html {
+    height: 100%;
+}
+
+body {
+    margin-top: 3%;
+}
+
+.backgroundImg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    opacity: 0.4;
+}
+
+.container {
+    position: relative;
+    overflow: hidden;
+    color: black;
+    border: solid black 1px;
+    border-radius: 20px;
+    background-color: rgba(144, 211, 255, 0.400);
+    font-weight: 20;
+    margin: auto;
+    width: 50%;
+    max-width: 500px;
+    padding: 10px;
+    justify-items: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+}
+
+#divIncremento {
+    display: none;
+}
+
+.incremento {
+    border-radius: 5px;
+    width: 56%;
+    padding: 10px;
+}
+
+.button {
+    border-radius: 5px;
+    width: 110px;
+    padding: 10px;
+}
+
+.field {
+    border-radius: 5px;
+
+    margin-bottom: 20px;
+}
+
+input,
+select {
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+h3 {
+    font-size: smaller;
+}
+
+.divResultado {
+    display: block;
+    border: solid;
+    align-items: center;
+    text-align: center;
+    font-size: larger;
+    font-weight: bold;
+    line-break: anywhere;
+}

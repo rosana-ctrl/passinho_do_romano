@@ -1,10 +1,9 @@
 var tipoCifra = document.querySelector('#tipoCifra')
 var divIncremento = document.querySelector("#divIncremento")
 var mensagem = document.querySelector("#mensagem");
-var resultado = document.querySelector("#divResultado");
-var codificar = document.querySelector("#codificar");
-var decodificar = document.querySelector("#decodificar");
+var divResultado = document.querySelector("#divResultado");
 var incremento = document.querySelector("#incremento");
+var executar = document.querySelector("#executar");
 
 
 tipoCifra.addEventListener('change', function (e) {
@@ -13,39 +12,50 @@ tipoCifra.addEventListener('change', function (e) {
     } else {
         divIncremento.style.display = 'none'
     }
+    divResultado.innerHTML = '';
+    mensagem.value = '';
 })
 
-codificar.addEventListener('click', function (e) {
+function codificar(tipoCifra, mensagem, incremento) {
     var result = "";
-    if (tipoCifra.value == "cifradecesar") {
-        result = mensagem.value;
-        for (var i = 0; i < incremento.value; i++) {
+    if (tipoCifra == "cifradecesar") {
+        result = mensagem;
+        for (var i = 0; i < incremento; i++) {
             result = codificaCifraDeCesar(result);
         }
-
     } else {
-        result = btoa(mensagem.value);
-
+        result = btoa(mensagem);
     }
-    resultado.innerHTML = `Mensagem codificada: ${result}`;
-})
+    return `Mensagem codificada: ${result}`;
 
-decodificar.addEventListener('click', function (e) {
+}
+
+function decodificar(tipoCifra, mensagem, incremento) {
     var result = "";
-    if (tipoCifra.value == "cifradecesar") {
-        result = mensagem.value;
-        for (var i = 0; i < incremento.value; i++) {
+    if (tipoCifra == "cifradecesar") {
+        result = mensagem;
+        for (var i = 0; i < incremento; i++) {
             result = decodificaCifraDeCesar(result);
         }
     } else {
-        result = atob(mensagem.value);
-
+        result = atob(mensagem);
     }
-    resultado.innerHTML = `Mensagem decodificada: ${result}`;
+    return `Mensagem decodificada: ${result}`;
+}
+
+executar.addEventListener('click', function (e) {
+    var resultado = '';
+    var metodo = document.querySelector('input[name="metodo"]:checked').value;
+    if (metodo == "codificar") {
+        resultado = codificar(tipoCifra.value, mensagem.value, incremento.value);
+    } else {
+        resultado = decodificar(tipoCifra.value, mensagem.value, incremento.value);
+    }
+    divResultado.innerHTML = resultado;
+
 })
 
 function codificaCifraDeCesar(str) {
-
     str = str.toUpperCase().split("")
 
     str = str.map(char => {

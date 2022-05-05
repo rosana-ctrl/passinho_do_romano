@@ -14,11 +14,10 @@
     <img class="backgroundImg" src="./security.jpg" />
 
     <div class="container">
-        <h1>História</h1>
+        <h1>Selecione o método de codificar/decodificar que deseja utilizar</h1>
         <form>
             <div class="field">
                 <label>Tipo de cifra:</label>
-                <br />
                 <select id="tipoCifra">
                     <option value="">Selecione</option>
                     <option value="base64">Base 64</option>
@@ -28,19 +27,22 @@
 
             <div class="field">
                 <label>Mensagem:</label>
-                <br />
                 <input type="text" id="mensagem" placeholder="Digite a sua mensagem" />
             </div>
 
             <div class="field" id="divIncremento">
                 <label>Incremento:</label>
-                <br />
                 <input class="incremento" id="incremento" type="text" placeholder="Digite somente números">
             </div>
         </form>
+        <div class="radio">
+            <input type="radio" name="metodo" value="codificar" checked />CODIFICAR
+            <input type="radio" name="metodo" value="decodificar" />DECODIFICAR
+        </div>
 
-        <button class="button" id="codificar">CODIFICAR</button>
-        <button class="button" id="decodificar">DECODIFICAR </button>
+        <div>
+            <button class="btnExecutar" id="executar">Executar</button>
+        </div>
 
         <h3> Para decodificar basta selecionar o texto codificado e colar no campo mensagem </h3>
         <div class="divResultado" id="divResultado"> </div>

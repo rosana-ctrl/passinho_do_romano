@@ -15,6 +15,10 @@ body {
     opacity: 0.4;
 }
 
+h1 {
+    text-align: center;
+}
+
 .container {
     position: relative;
     overflow: hidden;
@@ -38,7 +42,7 @@ body {
 
 .incremento {
     border-radius: 5px;
-    width: 56%;
+    padding: 10px;
     padding: 10px;
 }
 
@@ -48,9 +52,10 @@ body {
     padding: 10px;
 }
 
+
 .field {
     border-radius: 5px;
-
+    margin-top: 15px;
     margin-bottom: 20px;
 }
 
@@ -63,6 +68,25 @@ select {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+}
+
+input[type='radio'] {
+    border-radius: unset;
+    width: auto;
+    height: auto;
+    padding: unset;
+    -webkit-box-sizing: unset;
+    -moz-box-sizing: unset;
+    box-sizing: unset;
+}
+
+.btnExecutar {
+    border-radius: 5px;
+    width: 50%;
+    height: 100%;
+    padding: 10px;
+    margin: 20px auto;
+
 }
 
 h3 {
